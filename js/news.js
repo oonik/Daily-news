@@ -2,7 +2,8 @@ const loadNews = () =>{
     const url = `https://openapi.programming-hero.com/api/news/categories`;
     fetch(url)
     .then(res => res.json())
-    .then(data => displayNews(data.data.news_category));
+    .then(data => displayNews(data.data.news_category))
+    .catch(error => console.log(error))
 }
 
 const displayNews = newses =>{
@@ -44,7 +45,7 @@ const loadNewsDetails = details =>{
               <div class="card-body p-5">
                 <h5 class="card-title">${detail.title}</h5>
                 <p class="card-text">${detail.details.slice(0, 400)}</p>
-                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+               
               </div>
               <div class="d-flex justify-content-around">
                  <div class="d-flex justify-content-around">
@@ -69,9 +70,6 @@ const loadNewsDetails = details =>{
     })
 }
 
-const missingDataLoad = () =>{
-  const url = `https://openapi.programming-hero.com/api/news/2e78e5e0310c2e9adbb6efb1a263e745`;
 
-}
 
-loadNews();
+loadNews('B');
