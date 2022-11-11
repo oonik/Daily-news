@@ -25,6 +25,7 @@ const loadNewsId = (idNews) =>{
    fetch(url)
    .then(res => res.json())
    .then(data => loadNewsDetails(data.data))
+   .catch(error => console.log(error));
 }
 
 const loadNewsDetails = details =>{
