@@ -10,6 +10,7 @@ const displayNews = newses =>{
     const newsContainer = document.getElementById('news-container');
     newses.forEach(news => {
         //console.log(news)
+        
     const newsDiv = document.createElement('div');
     newsDiv.classList.add('btn-group')
     newsDiv.innerHTML = `
@@ -17,7 +18,9 @@ const displayNews = newses =>{
     
     `   
     newsContainer.appendChild(newsDiv) 
+    
     });
+    
 }
 
 const loadNewsId = (idNews) =>{
@@ -29,12 +32,14 @@ const loadNewsId = (idNews) =>{
 }
 
 const loadNewsDetails = details =>{
+    toggleSpiner(true)
     const newsDetailsContainer = document.getElementById('news-details');
 
     newsDetailsContainer.innerHTML = '';
-
+    
     details.forEach(detail => {
-       console.log(detail) 
+       //console.log(detail) 
+       
         const detailDiv = document.createElement('div');
         detailDiv.classList.add('card');
         detailDiv.innerHTML = `
@@ -68,9 +73,19 @@ const loadNewsDetails = details =>{
           </div>
         `
         newsDetailsContainer.appendChild(detailDiv)
-    })
+    });
+    toggleSpiner(false)
+}
+
+const toggleSpiner = isLoading =>{
+   const loader = document.getElementById('loader');
+   if(isLoading){
+     loader.classList.remove('d-none');
+   }
+   else{
+     loader.classList.add('d-none')
+   };
 }
 
 
-
-loadNews('B');
+loadNews();

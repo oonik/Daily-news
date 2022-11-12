@@ -19,7 +19,7 @@
                           <a class="nav-link active" aria-current="page" href="#">News</a>
                         </li>
                         <li class="nav-item">
-                          <a class="nav-link" href="#">Blogs</a>
+                          <a id="blog" class="nav-link" href="#">Blogs</a>
                         </li>
                         <a class="navbar-brand" href="#">
                             <img src="images/ResizerImage333X187.jpg" alt="Logo" width="30" height="24" class="d-inline-block align-text-top rounded-circle">
@@ -30,13 +30,14 @@
                   </div>
                 </div>
               </nav>
+              <hr>
         </section>
     </header>
     <!-- main section  -->
     <main>
        <section class="container mt-3">
-        <div id="news-container" class="text-center">
-            
+        <div id="news-container" class="text-center border border-0 shadow-sm rounded-5 p-2">
+           
         </div>
        </section>
        <!-- news details section  -->
@@ -44,6 +45,14 @@
        <div id="news-details" class="mt-5  shadow-none p-3 mb-5 bg-light rounded">
         
        </div>
+      </section>
+      <!-- spinner section  -->
+      <section id="loader" class="d-none">
+        <div style="height: 200px ;" class="d-flex justify-content-center align-items-center">
+          <div class="spinner-border text-warning" role="status">
+            <span class="visually-hidden">Loading...</span>
+          </div>
+        </div>
       </section>
     </main>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
